@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button'
+import { SignInButton, UserButton } from '@clerk/nextjs'
 import Image from 'next/image'
 import React from 'react'
 
@@ -11,7 +12,11 @@ function Header() {
                 width={160}
                 height={100}
             />
-            <Button>Get started</Button>
+            <SignInButton forceRedirectUrl='/dashboard'>
+                <Button>Get started</Button>
+            </SignInButton>
+
+            <UserButton />
         </div>
     )
 }

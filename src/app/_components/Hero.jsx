@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 
 function Hero() {
+  
   return (
     <section className="bg-gray-50 flex items-center flex-col">
       <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex ">
@@ -16,9 +17,10 @@ function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-4">
+            
             <a
               className="block w-full rounded bg-primary px-12 py-3 text-sm font-medium text-white shadow hover:bg-green-700 focus:outline-none focus:ring active:bg-red-500 sm:w-auto"
-              href="#"
+              href="/dashboard"
             >
               Get Started
             </a>
