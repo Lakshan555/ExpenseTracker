@@ -1,5 +1,6 @@
 import { Outfit } from "next/font/google";
 import "./globals.css";
+import { ClerkProvider, SignedIn, SignedOut, SignIn } from "@clerk/nextjs";
 
 const outfit = Outfit({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -14,10 +15,25 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${outfit.className} antialiased`}>
-        {children}
-      </body>
-    </html>
+
+    <ClerkProvider forceRe>
+      {/* <html lang="en">
+        <body className={`${outfit.className} antialiased`}>
+          <SignedOut>
+            <SignIn routing="hash" />
+          </SignedOut>
+          <SignedIn>
+            {children}
+          </SignedIn>
+        </body>
+      </html> */}
+      <html lang="en">
+        <body className={`${outfit.className} antialiased`}>
+
+          {children}
+
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
