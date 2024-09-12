@@ -22,13 +22,13 @@ function SideBar() {
             path: '/dashboard/budgets'
         },
         {
-            id: 2,
+            id: 3,
             name: "Expense",
             icon: ReceiptText,
             path: '/dashboard/expense'
         },
         {
-            id: 1,
+            id: 4,
             name: "Upgrade",
             icon: ShieldCheck,
             path: '/dashboard/upgrade'
@@ -47,7 +47,7 @@ function SideBar() {
             />
             <div className='mt-5'>
                 {menuList.map((menu) => (
-                    <Link href={menu.path}>
+                    <Link key={menu.id} href={menu.path}>
                         <h2 key={menu.id} className={`flex gap-2 items-center text-gray-500 font-medium p-5 rounded-md cursor-pointer hover:text-primary hover:bg-custom-orange mb-2
                         ${params === menu.path && 'bg-custom-orange text-primary'}`}>
                             <menu.icon />
